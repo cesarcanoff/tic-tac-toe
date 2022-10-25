@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  user-select: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+
+.init {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+  background-color: aqua;
+  transition: 300ms;
+}
+
+.board {
+  width: 50%;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.board header.title {
+  padding: 5px;
+  margin-bottom: 30px;
+  font-variant: small-caps;
+  width: 100%;
+  font-size: 1.5rem;
+  color: #9920b8;
+  text-align: center;
+}
+
+.board .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row .square {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  cursor: pointer;
+  font-weight: 800;
+  color: #000;
+  font-size: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.one,
+.two {
+  border-bottom: 2px solid #9920b8;
+  border-right: 2px solid #9920b8;
+}
+
+.three,
+.six {
+  border-bottom: 2px solid #9920b8;
+}
+
+.four,
+.five {
+  border-bottom: 2px solid #9920b8;
+  border-right: 2px solid #9920b8;
+}
+
+.seven,
+.eight {
+  border-right: 2px solid #9920b8;
+}
+
+.row .square:hover {
+  background-color: #280531;
+  color: #280531;
+}
+
+.information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  padding: 2%;
+  background-color: #000;
+}
+
+.information h1 {
+  font-size: 4rem;
+  padding: 1%;
+  color: #9920b8;
+  margin-bottom: 70px;
+}
+
+.information p {
+  font-size: 1.5rem;
+  padding: 1%;
+  color: #9920b8;
+  margin-bottom: 70px;
+}
+
+.information ol {
+  font-size: 1.5rem;
+  padding: 1%;
+  color: #9920b8;
+  margin-bottom: 70px;
+}
+
+button {
+  background-color: #000;
+  color: #9920b8;
+  border: 2px solid #9920b8;
+  padding: 15px;
+  width: 250px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 300ms;
+  margin-top: 30px;
+}
+
+button:hover {
+  background-color: #9920b8;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.board .winner {
+  color: #9920b8;
+  margin-top: 30px;
+  padding: 2%;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.board .game-time {
+  color: #9920b8;
+  padding: 2%;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 768px) {
+  .board {
+    width: 90%;
+  }
+
+  .board header.title {
+    font-size: 1.3rem;
+  }
+
+  .information {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    width: 100%;
+    padding: 50px;
+  }
+
+  .information h1 {
+    font-size: 1.8rem;
+    margin-bottom: 50px;
+  }
+
+  .information p {
+    font-size: 1rem;
+    margin-bottom: 50px;
+  }
+
+  .information ol {
+    font-size: 1rem;
+    padding: 1%;
+    color: #9920b8;
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 200px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 348px) {
+  .board {
+    width: 95%;
+  }
+
+  .board header.title {
+    font-size: 1rem;
+  }
+
+  .row .square {
+    width: 100px;
+    height: 100px;
+  }
+
+  .information {
+    width: 100%;
+    padding: 30px;
+  }
+
+  button {
+    width: 200px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
