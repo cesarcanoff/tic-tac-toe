@@ -1,7 +1,7 @@
 import { GlobalStyles } from "./styles/global";
 import { FieldBox } from "./components/FieldBox";
 import { Container } from "./components/Container";
-import { BoxPlayTime, SuccessScreen} from "./styles/styles";
+import { BoxPlayTime, SuccessScreen } from "./styles/styles";
 
 import { useState, useEffect } from "react";
 
@@ -25,11 +25,10 @@ export const App = () => {
       changePlayer(player);
     }
   }
-  
+
   useEffect(() => {
     haveWinner();
-  })
-  
+  });
 
   function haveWinner() {
     if (field1 !== "-" && field1 === field2 && field2 === field3) {
@@ -125,55 +124,78 @@ export const App = () => {
   }
 
   return (
-    <div>
-      { winner !== "" ? <SuccessScreen winner={winner}>
-        <h1>The champion was the player: {winner}</h1>
-        </SuccessScreen> : "" }
+    <>
+      {winner !== "" ? (
+        <SuccessScreen winner={winner}>
+          <h1>The champion was the player: {winner}</h1>
+        </SuccessScreen>
+      ) : (
+        ""
+      )}
+
+      {winner === "Tie" ? (
+        <SuccessScreen winner={winner}>
+          <h1>Tie!</h1>
+        </SuccessScreen>
+      ) : (
+        ""
+      )}
       <GlobalStyles />
-      <BoxPlayTime player={player}>TURN - <span>{player}</span></BoxPlayTime>
+      <BoxPlayTime player={player}>
+        TURN - <span>{player}</span>
+      </BoxPlayTime>
       <Container>
         <FieldBox
           borderPosition="bottom-right"
           onClick={() => markBox("field1")}
           playerMark={field1}
         />
+
         <FieldBox
           borderPosition="bottom-right"
           onClick={() => markBox("field2")}
           playerMark={field2}
         />
+
         <FieldBox
           borderPosition="bottom"
           onClick={() => markBox("field3")}
           playerMark={field3}
         />
+
         <FieldBox
           borderPosition="bottom-right"
           onClick={() => markBox("field4")}
           playerMark={field4}
         />
+
         <FieldBox
           borderPosition="bottom-right"
           onClick={() => markBox("field5")}
           playerMark={field5}
         />
-        <FieldBox borderPosition="bottom" onClick={() => markBox("field6")} playerMark={field6} />
+
+        <FieldBox
+          borderPosition="bottom"
+          onClick={() => markBox("field6")}
+          playerMark={field6}
+        />
+
         <FieldBox
           borderPosition="right"
           onClick={() => markBox("field7")}
           playerMark={field7}
         />
+
         <FieldBox
           borderPosition="right"
           onClick={() => markBox("field8")}
           playerMark={field8}
         />
-        <FieldBox
-          onClick={() => markBox("field9")}
-          playerMark={field9}
-        />
+
+        <FieldBox onClick={() => markBox("field9")} playerMark={field9} />
       </Container>
-    </div>
+    </>
   );
 };
 

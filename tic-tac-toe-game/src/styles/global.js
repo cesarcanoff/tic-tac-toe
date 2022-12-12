@@ -10,10 +10,11 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html, body {
-    height: 100vh;
+    height: 100%;
   }
 
   body {
+    padding: 2%;
     color: #fff;
     background-color: #111;
     display: flex;

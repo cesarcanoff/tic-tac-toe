@@ -8,7 +8,7 @@ export const BoxContainer = styled.div`
   cursor: pointer;
 
   p {
-    font-size: 8rem;
+    font-size: 4rem;
     font-weight: bolder;
 
     ${({ playerMark }) =>

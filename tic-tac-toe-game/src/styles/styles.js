@@ -33,7 +33,6 @@ export const SuccessScreen = styled.div`
   background-color: #222;
   height: 100vh;
 
-
   h1 {
     width: 50%;
     text-align: center;
@@ -41,12 +40,17 @@ export const SuccessScreen = styled.div`
     color: #20acf7;
 
     ${({ winner }) =>
-    winner === "X"
-      ? css`
-          color: #20acf7;
-        `
-      : css`
-          color: red;
-        `}
+      winner === "X"
+        ? css`
+            color: #20acf7;
+          `
+        : css`
+            color: red;
+          `}
+
+    @media screen and (max-width: 480px) {
+      width: 70%;
+      font-size: 3rem;
+    }
   }
-`
+`;
