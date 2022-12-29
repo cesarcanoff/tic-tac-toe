@@ -47,6 +47,8 @@ export const App = () => {
       setWinner(field2);
     } else if (field3 !== "-" && field3 === field6 && field6 === field9) {
       setWinner(field3);
+    } else if (field1 !== "-" && field2 !== "-" && field3 !== "-" && field4 !== "-" && field6 !== "-" && field7 !== "-" && field8 !== "-" && field9 !== "-") {
+      setWinner("Tie")
     }
   }
 
